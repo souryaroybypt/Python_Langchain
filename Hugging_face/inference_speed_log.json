@@ -1,0 +1,10 @@
+{
+    "DistilBERT": {
+        "total_time": 3.1209943294525146,
+        "average_time_per_sentence": 0.062419886589050295
+    },
+    "BERT": {
+        "total_time": 5.638660669326782,
+        "average_time_per_sentence": 0.11277321338653565
+    }
+}

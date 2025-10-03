@@ -1,0 +1,19 @@
+import random
+from datasets import load_dataset
+from transformers import pipeline
+
+# IMDB dataset
+dataset = load_dataset("imdb")
+
+# sentiment pipeline
+sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+
+
+samples = random.sample(list(dataset["test"]), 5)
+
+# sentiment analysis
+for i, sample in enumerate(samples, 1):
+    review = sample["text"]
+    result = sentiment_analyzer(review[:512])[0]
+    print(f"\nReview {i}: {review[:500]}...")
+    print(f"Predicted Sentiment: {result['label']} (score={result['score']:.4f})")
