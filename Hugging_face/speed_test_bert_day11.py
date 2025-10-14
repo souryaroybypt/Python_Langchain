@@ -4,10 +4,8 @@ from transformers import pipeline, logging
 
 logging.set_verbosity_error()
 
-
 distilbert_pipeline = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
 bert_pipeline = pipeline("sentiment-analysis", model="textattack/bert-base-uncased-SST-2")
-
 
 sentences = sentences = [
     "I absolutely love this new phone, it’s perfect.",
